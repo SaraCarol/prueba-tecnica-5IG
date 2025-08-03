@@ -16,7 +16,7 @@ Este repositorio contiene el desarrollo de la prueba técnica para el proceso de
     - `biblioteca-5ig-creacionTablas.sql`: Script SQL para la creación del esquema de base de datos.
     - `biblioteca-5ig-insercionDatos.sql`: Script SQL para insertar datos de prueba.
     - `biblioteca-5ig-consultas.sql`: Consultas para cumplir con los requerimientos funcionales.
-    - `modelo-ER.png`: Diagrama Entidad-Relación del modelo propuesto.
+    - `biblioteca-5ig-ER.png`: Diagrama Entidad-Relación del modelo propuesto.
 
   ### Características implementadas
 
@@ -43,7 +43,7 @@ Si necesitas ejecutar los scripts paso a paso, asegúrate de tener una conexión
 
 ```sql
 USE biblioteca_5IG;
-
+```
 
 
 
@@ -52,4 +52,5 @@ USE biblioteca_5IG;
 ## Task 2: Script en Python con consumo de API pública
 ## Task 3: Aplicación frontend mostrando datos de una API
 ## Task 4: Simulación de CI/CD con GitHub Actions
+
 
