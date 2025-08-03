@@ -29,9 +29,9 @@ Este repositorio contiene el desarrollo de la prueba técnica para el proceso de
       - Contabilizar ejemplares disponibles por estante.
 
   ### Motor utilizado
-
+  
     - MySQL (compatible con Workbench)
-
+    
   ### Cómo probarlo
 
     1. Ejecuta `biblioteca-5ig-creacionTablas.sql` en tu base de datos.
@@ -45,12 +45,41 @@ Si necesitas ejecutar los scripts paso a paso, asegúrate de tener una conexión
 USE biblioteca_5IG;
 ```
 
-
-
-
   
 ## Task 2: Script en Python con consumo de API pública
+  Esta carpeta contiene la solución a la Tarea 2 del reto técnico para 5IG Solutions, cuyo objetivo es interactuar con una API REST pública usando Python.
+   ### Archivos incluidos
+   - `api_script.py`: Script Python para el consumo de la API gratuita.
+   ### Características implementadas
+   - Petición GET: Obtener todos los productos
+     Envía una petición GET a la API y muestra una lista de todos los productos disponibles (se muestran el nombre y precio solamente).
+   - Petición GET por ID: Obtener un producto por ID
+     Permite obtener un producto específico pasando su id, y muestra sus detalles básicos (se muestran el nombre y precio solamente).
+   - Petición POST: Crear un nuevo producto
+     Envía una petición POST para agregar un nuevo producto.
+     Muestra la respuesta con el ID, título y precio del producto creado.
+   - Manejo de errores
+     Todas las peticiones están encapsuladas en bloques try/except.
+     Se captura y muestra cualquier error de red o respuesta inválida.
+     
+   ### Herramientas utilizadas
+    - Python 
+    - Librería requests para gestionar las peticiones HTTP.
+    - API utilizada: [Escuela JS REST API](https://fakeapi.platzi.com/en)
+    
+   ### Cómo probarlo
+   
+  1.  Tener Python y requests instalado:
+       ```
+        pip install requests
+       ```
+       
+  2. Ejecutar el archivo en consola:
+     python api_script.py
+       
+
 ## Task 3: Aplicación frontend mostrando datos de una API
 ## Task 4: Simulación de CI/CD con GitHub Actions
+
 
 
