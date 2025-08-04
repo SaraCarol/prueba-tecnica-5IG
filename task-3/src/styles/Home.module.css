@@ -1,0 +1,36 @@
+.contenedor{
+    display: flex;
+}
+
+.productos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.contenidoCard{
+     flex-basis: 20%; /* 5 por fila */
+    max-width: 20%;
+}
+
+@media (max-width: 1200px) {
+    .contenidoCard {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 960px) {
+    .contenidoCard {
+        flex-basis: 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenidoCard {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
