@@ -83,6 +83,7 @@ USE biblioteca_5IG;
   Esta carpeta tiene el proyecto de la solución al reto técnico Task 3 para 5IG Solutions. Se construyó una aplicación frontend moderna utilizando React + Vite, que consume datos desde una REST API pública para     mostrar un catálogo de productos.
   ### Archivos incluidos
   ├── src/
+  
   │   ├── components/         
   │   ├── context/            
   │   ├── pages/              
@@ -121,8 +122,10 @@ USE biblioteca_5IG;
      
    ### Cómo probarlo en línea
    El proyecto fue desplegado con GitHub Pages y está disponible en:
+   https://saracarol.github.io/prueba-tecnica-5IG-deploy-API/
   
 ## Task 4: Simulación de CI/CD con GitHub Actions
+
 
 
 
