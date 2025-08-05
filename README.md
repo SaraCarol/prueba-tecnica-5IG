@@ -45,11 +45,13 @@ Si necesitas ejecutar los scripts paso a paso, asegúrate de tener una conexión
 USE biblioteca_5IG;
 ```
 
-  
+ ---  
 ## Task 2: Script en Python con consumo de API pública
   Esta carpeta contiene la solución a la Tarea 2 del reto técnico para 5IG Solutions, cuyo objetivo es interactuar con una API REST pública usando Python.
+  
    ### Archivos incluidos
    - `api_script.py`: Script Python para el consumo de la API gratuita.
+   - 
    ### Características implementadas
    - Petición GET: Obtener todos los productos
      Envía una petición GET a la API y muestra una lista de todos los productos disponibles (se muestran el nombre y precio solamente).
@@ -63,9 +65,9 @@ USE biblioteca_5IG;
      Se captura y muestra cualquier error de red o respuesta inválida.
      
    ### Herramientas utilizadas
-    - Python 
-    - Librería requests para gestionar las peticiones HTTP.
-    - API utilizada: [Escuela JS REST API](https://fakeapi.platzi.com/en)
+  - Python 
+  - Librería requests para gestionar las peticiones HTTP.
+  - API utilizada: [Escuela JS REST API](https://fakeapi.platzi.com/en)
     
    ### Cómo probarlo
    
@@ -78,9 +80,10 @@ USE biblioteca_5IG;
      ```
      python api_script.py
      ```
-
+ ---
 ## Task 3: Aplicación frontend mostrando datos de una API
   Esta carpeta tiene el proyecto de la solución al reto técnico Task 3 para 5IG Solutions. Se construyó una aplicación frontend moderna utilizando React + Vite, que consume datos desde una REST API pública para     mostrar un catálogo de productos.
+  
   ### Archivos incluidos
   ├── src/
   
@@ -90,6 +93,7 @@ USE biblioteca_5IG;
   │   ├── styles/             
   │   └── App.jsx
   └── index.html
+
 
   ### Características implementadas
   - Visualiza una lista de productos provenientes de la API pública, misma utilizada en la task 2.
@@ -123,7 +127,8 @@ USE biblioteca_5IG;
    ### Cómo probarlo en línea
    El proyecto fue desplegado con GitHub Pages y está disponible en:
    https://saracarol.github.io/prueba-tecnica-5IG-deploy-API/
-  
+   
+   ---
 ## Task 4: Simulación de CI/CD con GitHub Actions
 En esta carpeta se encuentra la configuración para automatizar el flujo de integración continua.
 
@@ -143,19 +148,21 @@ En esta carpeta se encuentra la configuración para automatizar el flujo de inte
 
 ### Cómo probarlo
 1. Tener el proyecto localmente con las dependencias necesarias:
-  ```
+    ```
     npm install
     npm run build
     npm run preview
- ```
+   ```
 2. Realizar un cambio y hacer un push a la rama main.
     ```
-     git add .
-    git commit -m "mensaje"
-    git push origin main
+      git add .
+      git commit -m "mensaje"
+      git push origin main
+     ```
     
 3. Verificar en GitHub que se haya realizado correctamente el deploy. Se puede ir a la pestaña Actions del repo y ver la ejecución del último flujo de trabajo.
    Verificar el cambio desde el sitio web desplegado https://github.com/SaraCarol/prueba-tecnica-5IG-deploy-API
+
 
 
 
