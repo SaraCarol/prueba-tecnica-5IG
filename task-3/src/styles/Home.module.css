@@ -7,10 +7,11 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
+    align-items: center;
 }
 
 .contenidoCard{
-     flex-basis: 20%; /* 5 por fila */
+    flex-basis: 20%;
     max-width: 20%;
 }
 

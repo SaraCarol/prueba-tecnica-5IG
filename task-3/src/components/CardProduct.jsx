@@ -16,15 +16,15 @@ const CardProduct = ({producto}) =>{
             />
             <CardContent>
                 <Typography className={styles.title}>{producto.title}</Typography>
-                <Typography >
+                <Typography className={styles.description}>
                     {producto.description}
                 </Typography>
-                <Typography >
+                <Typography className={styles.price}>
                     ${producto.price}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Ver más</Button>
+                <Button className={styles.buttonVerMas} size="small">Ver más</Button>
             </CardActions>
         </Card>
     );
