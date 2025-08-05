@@ -1,8 +1,16 @@
-.contenedor{
+.container{
     display: flex;
+    flex-direction: column;
 }
 
-.productos{
+.containerProducts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.products{
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -10,27 +18,35 @@
     align-items: center;
 }
 
-.contenidoCard{
+.boxCard{
     flex-basis: 20%;
     max-width: 20%;
 }
 
-@media (max-width: 1200px) {
-    .contenidoCard {
-        flex-basis: 25%;
-        max-width: 25%;
-    }
+.pagination :global(.MuiPaginationItem-root){
+    color: white;
+    border-radius: 12px;
+    border: 1px solid #555
 }
 
+.pagination :global(.MuiPaginationItem-root.Mui-selected) {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+
+
 @media (max-width: 960px) {
-    .contenidoCard {
+    .boxCard {
         flex-basis: 33.33%;
         max-width: 33.33%;
     }
 }
 
 @media (max-width: 600px) {
-    .contenidoCard {
+    .boxCard {
         flex-basis: 100%;
         max-width: 100%;
     }
