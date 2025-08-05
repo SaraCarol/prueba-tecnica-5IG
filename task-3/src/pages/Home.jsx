@@ -1,14 +1,17 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { Card, Container, Grid, Box } from '@mui/material';
+import { Container, Grid, Box, Typography } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import { useProducts } from '../context/ProductContext';
+import {useCategories} from '../context/CategoryContext';
 import CardProduct from '../components/CardProduct';
 import styles from '../styles/Home.module.css';
+import CardCategory from "../components/CardCategory";
 
 const Home = () => {
-    const { products, loading, error } = useProducts();
+    const { products} = useProducts();
+    const {categories} = useCategories();
     const [currentPage, setCurrentPage] = useState(1);
 
     const productsPerPage = 8;
@@ -16,12 +19,28 @@ const Home = () => {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
     const totalPages = Math.ceil(products.length / productsPerPage);
-    console.log(products)
+    console.log(categories)
 
     return(
         <Container className={styles.container}>
 
+        <Box>
+            <Typography variant="h4" >Our Products</Typography>
+        </Box>
+
+        <Box className={styles.boxCategories}>
+            <Typography variant="h5" >Categories</Typography>
+            <Box className={styles.categories} >
+                {categories.map(cat =>(
+                    <Box item key={cat.id} className={styles.boxCard}>
+                        <CardCategory cat={cat} />
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+
         <Container className={styles.containerProducts}>
+            <Typography variant="h5" className={styles.titleSec1}>Products</Typography>
             <Box className={styles.products}>
                 {currentProducts.map( producto =>(
                     <Box item key={producto.id} className={styles.boxCard}>

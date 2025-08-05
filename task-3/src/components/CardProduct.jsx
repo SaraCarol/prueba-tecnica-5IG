@@ -4,8 +4,6 @@ import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@
 import styles from '../styles/CardProduct.module.css';
 
 const CardProduct = ({producto}) =>{
-    const { products, loading, error } = useProducts();
-    
 
     return (
         <Card className={styles.card}>
