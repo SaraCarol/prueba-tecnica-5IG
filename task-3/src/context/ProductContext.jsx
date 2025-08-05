@@ -3,19 +3,24 @@ import { createContext, useState, useEffect, useContext } from "react";
 import axios from 'axios';
 
 const ProductContext = createContext();
-const API_URL = "https://api.escuelajs.co/api/v1/products"
+const API_URL = "https://api.escuelajs.co/api/v1/products/"
 
 export const ProductProvider = ({children}) => {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filters, setFilters] = useState({});
 
-    useEffect(() => {
-        const fetchProducts = async () => {
+    
+        const fetchProducts = async (customFilters = {}) => {
             try {
-                const response = await axios.get(API_URL);
+                const query = new URLSearchParams(customFilters).toString();
+                const URL = `${API_URL}?${query}`
+                console.log(URL)
+                const response = await axios.get(URL);
                 setProducts(response.data);
+                setFilters(customFilters);
             } catch (error) {
                 console.error("Error al obtener los productos:", error)
                 setError(error);
@@ -24,12 +29,13 @@ export const ProductProvider = ({children}) => {
             }
         };
         
+        useEffect(() => {
+            fetchProducts();
+        }, []);
 
-        fetchProducts();
-    }, []);
 
     return (
-        <ProductContext.Provider value={{ products, loading, error }}>
+        <ProductContext.Provider value={{ products, loading, error, filters, fetchProducts }}>
             {children}
         </ProductContext.Provider>
     );

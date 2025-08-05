@@ -8,6 +8,7 @@ import {useCategories} from '../context/CategoryContext';
 import CardProduct from '../components/CardProduct';
 import styles from '../styles/Home.module.css';
 import CardCategory from "../components/CardCategory";
+import FilterProducts from "../components/FilterProducts";
 
 const Home = () => {
     const { products} = useProducts();
@@ -19,13 +20,13 @@ const Home = () => {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
     const totalPages = Math.ceil(products.length / productsPerPage);
-    console.log(categories)
 
     return(
         <Container className={styles.container}>
 
         <Box>
             <Typography variant="h4" >Our Products</Typography>
+            <FilterProducts/>
         </Box>
 
         <Box className={styles.boxCategories}>
