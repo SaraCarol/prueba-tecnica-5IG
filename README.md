@@ -125,6 +125,39 @@ USE biblioteca_5IG;
    https://saracarol.github.io/prueba-tecnica-5IG-deploy-API/
   
 ## Task 4: Simulación de CI/CD con GitHub Actions
+En esta carpeta se encuentra la configuración para automatizar el flujo de integración continua.
+
+### Archivos incluidos
+- deploy.yml : Script yaml configurado para correr el deploy automático.
+  Si bien se incluye solo el archivo utilizado, este se implementa dentro del frontend desarrollado para la task-3 dentro de las carpetas `.github/workflows/deploy.yml` en el repositorio utilizado para su deploy.
+  
+### Características implementadas
+- Despliegue automático cada vez que se hace `push` a la rama `main`.
+- Build automático del proyecto usando Vite.
+- Publicación automática de la carpeta `/dist` en la rama `gh-pages`.
+- Simulación de pruebas con un paso de testeo sencillo (un echo con un mensaje).
+
+### Herramientas utilizadas
+- GitHub Actions 
+- GitHub Pages (deploy final)
+
+### Cómo probarlo
+1. Tener el proyecto localmente con las dependencias necesarias:
+  ```
+    npm install
+    npm run build
+    npm run preview
+ ```
+2. Realizar un cambio y hacer un push a la rama main.
+    ```
+     git add .
+    git commit -m "mensaje"
+    git push origin main
+    
+3. Verificar en GitHub que se haya realizado correctamente el deploy. Se puede ir a la pestaña Actions del repo y ver la ejecución del último flujo de trabajo.
+   Verificar el cambio desde el sitio web desplegado https://github.com/SaraCarol/prueba-tecnica-5IG-deploy-API
+
+
 
 
 
