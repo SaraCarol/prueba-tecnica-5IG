@@ -43,11 +43,17 @@ const Home = () => {
         <Container className={styles.containerProducts}>
             <Typography variant="h5" className={styles.titleSec1}>Products</Typography>
             <Box className={styles.products}>
-                {currentProducts.map( producto =>(
+                {currentProducts.length === 0 ? (
+                    <Typography className={styles.noResults}>
+                        No products found 😥
+                    </Typography>
+                ) : (
+                    currentProducts.map((producto) => (
                     <Box item key={producto.id} className={styles.boxCard}>
                         <CardProduct producto={producto} />
                     </Box>
-                ))}
+                    ))
+                )}
             </Box>
             <Box className={styles.pagination} >
                 <Pagination
