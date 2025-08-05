@@ -80,7 +80,50 @@ USE biblioteca_5IG;
      ```
 
 ## Task 3: Aplicación frontend mostrando datos de una API
+  Esta carpeta tiene el proyecto de la solución al reto técnico Task 3 para 5IG Solutions. Se construyó una aplicación frontend moderna utilizando React + Vite, que consume datos desde una REST API pública para     mostrar un catálogo de productos.
+  ### Archivos incluidos
+  ├── src/
+  │   ├── components/         
+  │   ├── context/            
+  │   ├── pages/              
+  │   ├── styles/             
+  │   └── App.jsx
+  └── index.html
+
+  ### Características implementadas
+  - Visualiza una lista de productos provenientes de la API pública, misma utilizada en la task 2.
+  - Visualiza una lista de categorías provenientes de la API.
+  -  Paginación para navegar entre los productos de forma ordenada.
+  -  Filtros dinámicos para buscar productos por Categoría y rango de precios.
+  -  Botón para aplicar y resetear filtros.
+  -  Mensaje por si la búsqueda no arroja resultados.
+
+  ### Herramientas utilizadas
+  - React + Vite
+  - Material UI (MUI) para estilos y componentes
+  - Axios para consumir la API
+  - CSS Modules para estilos personalizados
+  - Context API para manejo global del estado
+
+  ### Cómo probarlo localmente
+  1. Clona el repositorio:
+      ```
+     git clone https://github.com/tu-usuario/nombre-del-repo.git
+  2. Instala las dependencias:
+      ```
+      npm install
+  3. Ejecuta la aplicación:
+      ```
+      npm run dev
+     
+
+  Nota: Se debe tener Node.js y Vite instalados.
+     
+   ### Cómo probarlo en línea
+   El proyecto fue desplegado con GitHub Pages y está disponible en:
+  
 ## Task 4: Simulación de CI/CD con GitHub Actions
+
 
 
 
