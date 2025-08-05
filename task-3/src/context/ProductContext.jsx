@@ -17,7 +17,6 @@ export const ProductProvider = ({children}) => {
             try {
                 const query = new URLSearchParams(customFilters).toString();
                 const URL = `${API_URL}?${query}`
-                console.log(URL)
                 const response = await axios.get(URL);
                 setProducts(response.data);
                 setFilters(customFilters);

@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import {Button, Drawer, Box, Typography, FormGroup, FormControlLabel, Radio, Divider, Container, 
-    FormControl, FormLabel, RadioGroup
+import {Button, Drawer, Box, Typography, Select, FormControlLabel, Radio, Divider, Container, 
+    FormControl, FormLabel, RadioGroup, MenuItem
 } from "@mui/material"
 import { useCategories } from "../context/CategoryContext";
 import { useProducts } from "../context/ProductContext";
+import styles from '../styles/FilterProduct.module.css';
 
 const FilterProducts = () =>{
     const {categories} = useCategories();
@@ -28,7 +29,6 @@ const FilterProducts = () =>{
 
         if(categorySelected && categorySelected !== ""){
             filters.categoryId = categorySelected
-            console.log(filters.categoryId)
         }
 
         if(priceRangeSelected && priceRangeSelected !== ""){
@@ -44,6 +44,13 @@ const FilterProducts = () =>{
 
     }
 
+    const clearFilters = () => {
+        setCategorySelected('');
+        setPriceRangeSelected('');
+        fetchProducts({});
+        toggleDrawer();
+    }
+
     return(
         <Container>
 
@@ -51,47 +58,45 @@ const FilterProducts = () =>{
                 Filter
             </Button>
             <Drawer open={open} onClose={toggleDrawer}> 
-                <Box>
-                    <Typography variant="h6" gutterBottom>
+                <Box className={styles.boxFilter} role="presentation" >
+                    <Typography variant="h6" gutterBottom className={styles.title}>
                         Filter by
                     </Typography>
 
                     <Divider sx={{ mb: 2 }} />
 
                     <FormControl component="fieldset" sx={{ mb: 3 }}>
-                        <FormLabel component="legend">Categories</FormLabel>
-                            <RadioGroup
+                        <FormLabel component="legend" className={styles.label}>Categories</FormLabel>
+                            <Select
                                 value={categorySelected}
                                 onChange={(e) => setCategorySelected(e.target.value)}
+                                className={styles.select}
                                 >
                                 {categories.map((cat) => (
-                                    <FormControlLabel
-                                        key={cat.id}
-                                        value={String(cat.id)}
-                                        control={<Radio />}
-                                        label={cat.name}
-                                    />
+                                    <MenuItem key={cat.id} value={String(cat.id)} 
+                                    className={styles.menuItem}>
+                                        {cat.name}
+                                    </MenuItem>
                                 ))}
-                            </RadioGroup>
+                            </Select>
                     </FormControl>
 
                     <Divider sx={{ mb: 2 }} />
 
                     <FormControl component="fieldset" sx={{ mb: 3 }}>
-                        <FormLabel component="legend">Price Range</FormLabel>
-                        <RadioGroup
+                        <FormLabel component="legend" className={styles.label}>Price Range</FormLabel>
+                        <Select
                         value={priceRangeSelected}
                         onChange={(e) => setPriceRangeSelected(e.target.value)}
+                        className={styles.select}
                         >
                         {priceRanges.map((range) => (
-                            <FormControlLabel
-                                key={range.label}
-                                value={range.label}
-                                control={<Radio />}
-                                label={`$${range.label}`}
-                            />
+                            <MenuItem key={range.label} value={range.label}
+                            className={styles.menuItem}>
+                                {range.label}
+                            </MenuItem>
                         ))}
-                        </RadioGroup>
+                        </Select>
                     </FormControl>
 
                     <Button
@@ -99,8 +104,19 @@ const FilterProducts = () =>{
                         color="primary"
                         fullWidth
                         onClick={applyFilters}
+                        className={styles.applyButton}
                     >
                         Apply Filters
+                    </Button>
+
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        onClick={clearFilters}
+                        className={styles.clearButton}
+                    >
+                        Clear Filters
                     </Button>
                 </Box>
             </Drawer>
