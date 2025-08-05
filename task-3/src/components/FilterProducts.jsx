@@ -54,7 +54,8 @@ const FilterProducts = () =>{
     return(
         <Container>
 
-            <Button onClick={toggleDrawer} variant="outlined" sx={{ mb: 2 }}>
+            <Button onClick={toggleDrawer} variant="outlined" sx={{ mb: 2 }}
+            className={styles.filterButton}>
                 Filter
             </Button>
             <Drawer open={open} onClose={toggleDrawer}> 

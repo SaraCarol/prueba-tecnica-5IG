@@ -22,7 +22,7 @@ const CardProduct = ({producto}) =>{
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button className={styles.buttonVerMas} size="small">Ver más</Button>
+                <Button className={styles.buttonVerMas} size="small">See more</Button>
             </CardActions>
         </Card>
     );
